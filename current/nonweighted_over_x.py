@@ -63,20 +63,20 @@ def getMaxNpe(start_ctr, end_ctr):
 
 # Main program
 # Loop over values of X
-x_values = [(x+1)*5 for x in xrange(21)] # makes [5,10,15,20,25,30,35,40,45,50, ..., 100]
+x_values = [(x+1)*5 for x in xrange(20)] # makes [5,10,15,20,25,30,35,40,45,50, ..., 100]
 print x_values
 
 for i in x_values:
     ctr = 0
     under_ctr = 0
     cut_value = i
-    hist = ROOT.TH1D("hist", "Cut Value: " + str(cut_value), 200, -500., 500.)
+    hist = ROOT.TH1D("hist", "Cut Value: " + str(cut_value), 100, -500., 500.)
     while 1:
         print "ctr: " + str(ctr)
         endpoint = getEndpoint(ctr)
         print "end: " + str(endpoint)
         if makesCut(ctr, endpoint, cut_value):
-            hist.Fill(abs(ch.mc_start_z - getMaxNpeZ(ctr, endpoint)))
+            hist.Fill(ch.mc_start_z - getMaxNpeZ(ctr, endpoint))
         else:
             under_ctr += 1
         ctr = endpoint

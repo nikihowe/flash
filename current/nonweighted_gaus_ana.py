@@ -4,7 +4,7 @@ import sys
 # Example to read an input file
 #
 
-contents = open('output_gaus.txt', 'r').read().split('\n')
+contents = open('nonweighted_output_gaus.txt', 'r').read().split('\n')
 ctr = 0
 x_data = []
 y_data = []
@@ -27,8 +27,8 @@ for i in xrange(len(x_data)):
 
 c = TCanvas("c", "", 600, 500)
 g.SetTitle("Gaus fit STD and Efficiency wrt cut value; Cut Value (npe); STD (npe-weighted) (Blue) / Efficiency (Red)")
-g.SetMinimum(70)
-g.SetMaximum(150)
+g.SetMinimum(50)
+g.SetMaximum(110)
 g.SetMarkerSize(1)
 g.SetMarkerStyle(20)
 g.SetMarkerColor(ROOT.kRed)
@@ -39,7 +39,7 @@ f.SetMarkerColor(ROOT.kBlue)
 f.Draw("P")
 
 c.Update()
-
+c.SaveAs("STD and Efficiency.png")
 # Wait till exit
 ctr += 1
 sys.stdin.readline()
