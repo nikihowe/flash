@@ -1,0 +1,14 @@
+import sys
+from ROOT import TChain
+ch=TChain("flash_tree")
+ch.AddFile("niki_tree.root")
+
+ctr=0
+while 1:
+
+    ch.GetEntry(ctr)
+    event_id = (ch.run, ch.subrun, ch.event)
+    print ctr
+    print "(Run,SubRun,Event) = (%d,%d,%d)" % event_id
+    user_input = sys.stdin.readline()
+    ctr+=1
