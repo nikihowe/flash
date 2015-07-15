@@ -78,6 +78,8 @@ while 1:
     g3.Draw("P")
 
     c.Update()
+    c.SaveAs("event_picture_" + str(evt_ctr) + ".png")
+    c.SaveAs("event_picture_" + str(evt_ctr) + ".C")
     user_input = sys.stdin.readline()
 
     evt_ctr += 1

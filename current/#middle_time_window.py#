@@ -83,13 +83,13 @@ def orderInNpe(start_ctr, end_ctr):
         ordered_npes_yes = list(reversed(ordered_npes))
     return ordered_npes_yes, points_dict
 
+
 # SET UP GLOBALS
 
 window_values = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
 
 # Outpit file
 gout = open("middle_time_window_output.txt", "w")
-
 for window_size in window_values:
 
     # Set the cut value here
@@ -146,3 +146,4 @@ for window_size in window_values:
     print "Using a window size of " + str(window_size) + " us,"
     print "There were " + str(above_ctr) + " flashes above " + str(cut_value) + ", out of a total of " + str(ctr) + " flashes"
     print "Press <ENTER> to exit"
+

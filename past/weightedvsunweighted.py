@@ -78,7 +78,7 @@ cut_value = 5
 ch = ROOT.TChain("flash_tree")
 ch.AddFile("niki_tree.root")
 
-hist = ROOT.TH1D("hist", "mc_start_z - flash_z for npe-weighted and max-npe techniques", 100, -300., 300.)
+hist = ROOT.TH1D("hist", "mc_start_z - flash_z for npe-weighted and max-npe techniques", 100, -500., 500.)
 hist.GetXaxis().SetTitle("mc_start_z - flash_z (npe-weighted red vs max-npe blue)")
 
 ctr = 0
@@ -86,7 +86,6 @@ max_npe = 0.
 u_dist = 0
 total_npe = 0.
 last_start_z = 0.
-fillctr1 = 0
 while ctr < ch.GetEntries():
 
     endpoint = getEndpoint(ctr)
@@ -101,7 +100,6 @@ while ctr < ch.GetEntries():
             ctr += 1
         distance = u_dist / total_npe
         hist.Fill(last_start_z - distance)
-        fillctr1 += 1
     u_dist = 0.
     total_npe = 0.    
     ctr = endpoint
@@ -110,24 +108,20 @@ hist.SetLineWidth(2)
 hist.SetLineColor(ROOT.kRed)
 hist.SetFillStyle(3002)
 hist.SetFillColor(ROOT.kRed)
-
 hist.Draw()
 c1.Update()
-print 'fill counter 1: ' + str(fillctr1)
 
 # Start of the second part
-gist = ROOT.TH1D("gist", "", 100, -200, 200)
+gist = ROOT.TH1D("gist", "", 100, -500, 500)
 
 ctr = 0
 max_npe = 0.
-fillctr2 = 0
 
 while ctr < ch.GetEntries():
     endpoint = getEndpoint(ctr)
     if makesCut(ctr, endpoint, cut_value):
         zpos = getMaxNpePos(ctr, endpoint)
         gist.Fill(ch.mc_start_z - zpos)
-        fillctr2 += 1 
     ctr = endpoint
     print ctr
 
@@ -136,6 +130,7 @@ gist.SetLineColor(ROOT.kBlue)
 gist.SetFillStyle(3002)
 gist.SetFillColor(ROOT.kBlue)
 gist.Draw("sames")
+print hist.GetEntries()
+print gist.GetEntries()
 c1.Update()
-print 'fill counter 2: ' + str(fillctr2)
 c1.SaveAs("weighted_vs_unweighted.png")

@@ -50,8 +50,8 @@ while 1:
         ctr += 1
     g1.Draw("AP")
     c.Update()
-    print "Hit <ENTER> to see next graph"
-    sys.stdin.readline()
+    c.SaveAs("proj_npe_" + str(evt_ctr) + ".png")
+    c.SaveAs("proj_npe_" + str(evt_ctr) + ".C")
         
     # Then reset everything
     evt_ctr += 1

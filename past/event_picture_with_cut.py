@@ -84,6 +84,7 @@ while 1:
     g3.Draw("P")
 
     c.SaveAs("picture " + str(evt_ctr) + '.png')
+    c.SaveAs("picture " + str(evt_ctr) + '.C')
     evt_ctr += 1
     if evt_ctr > 7:
         break

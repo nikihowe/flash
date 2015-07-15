@@ -6,7 +6,7 @@ c = ROOT.TCanvas("c","", 600,500)
 ch = ROOT.TChain("flash_tree")
 ch.AddFile("niki_tree.root")
 
-hist = ROOT.TH1D("hist", "Difference in PMT-constructed position and mc-truth start position", 200, -120, 120)
+hist = ROOT.TH1D("hist", "Difference in PMT-constructed position and mc-truth start position", 100, -120, 120)
 hist.GetXaxis().SetTitle("flash_y - mc_start_y")
 
 ctr = 0
@@ -23,5 +23,9 @@ while 1:
         c.Update()
         break
     ctr += 1
+hist.Draw()
+c.Update()
+c.SaveAs("initial_y_diff.png")
+c.SaveAs("initial_y_diff.C")
 print "Hit <ENTER> to exit"
 sys.stdin.readline()

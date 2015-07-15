@@ -3,6 +3,8 @@ import math
 import ROOT
 import numpy
 
+c = ROOT.TCanvas("c", "", 600, 500)
+
 # METHODS #
 
 # Given a value, find its associated key
@@ -66,14 +68,12 @@ def orderInTime(start_ctr, end_ctr):
 
 # SET UP GLOBALS
 
-window_values = [2, 4, 6, 8, 10, 12, 14, 16, 18, 20]
+window_values = [2]
 
 # Output file
-gout = open("time_window_output.txt", "w")
-
 
 for window_size in window_values:
-
+    maxtimedif = 0
     ch = ROOT.TChain("flash_tree")
     ch.AddFile("niki_tree.root")
         
@@ -88,8 +88,8 @@ for window_size in window_values:
     above_ctr = 0
 
     print "Window size: " + str(window_size)
-    hist = ROOT.TH1D("hist", "Cut at: " + str(cut_value), 100, -120, 120)
-    hist.GetXaxis().SetTitle("distance")
+    hist = ROOT.TH1D("hist", "Cut at: " + str(cut_value), 100, 0, 1900)
+    hist.GetXaxis().SetTitle("time between flashes")
 
     while 1:
 
@@ -106,28 +106,28 @@ for window_size in window_values:
 
         # Fill histogram and reset analysis variables @ event boundary
         if makesCut(ctr, endpoint, cut_value):
-            endtime = None
-            maxz = 0.
-            max_npe = 0.
+            first_time = True
             ch.GetEntry(ctr)
+            print "the ordered times are " + str(ordered_times) 
             for i in xrange(len(ordered_times)):
-                if endtime and ordered_times[i] > endtime:
-                    endtime = None
-                    hist.Fill(ch.mc_start_z - maxz)
-                    gout.write(str(ch.mc_start_z - maxz) + " ")
-                if points_dict[ordered_times[i]][1] > cut_value:
-                    above_ctr += 1
-                    if points_dict[ordered_times[i]][1] > max_npe:
-                        maxz = points_dict[ordered_times[i]][0]
-                    if not endtime:
-                        endtime = ordered_times[i] + window_size
-            if endtime: # catch the scenario in which the window goes over the end of the set
-                hist.Fill(ch.mc_start_z - maxz)
-                gout.write(str(ch.mc_start_z - maxz) + " ")
-            endtime = None
-        # Reset vars for new event
+                if first_time:
+                    first_time = False
+                    print "that was the first time"
+                else:
+                    hist.Fill(ordered_times[i] - past_time)
+                    if ordered_times[i] - past_time > maxtimedif:
+                        maxtimedif = ordered_times[i] - past_time
+                    print "just filled at " + str(ordered_times[i]) + " minus " + str(past_time) + " equals " + str(ordered_times[i] - past_time)
+                past_time = ordered_times[i]
+
+    # Reset vars for new event
         ctr = endpoint
         print ctr
         if not ctr < ch.GetEntries():
             break
-    gout.write("\n")
+print "the max time dif is " + str(maxtimedif)
+hist.Draw()
+c.Update()
+c.SaveAs("time_between_flashes.png")
+print "Hit <ENTER> to exit"
+sys.stdin.readline()

@@ -22,11 +22,11 @@ g = ROOT.TGraph()
 f = ROOT.TGraph()
 
 for i in xrange(len(x_data)):
-    g.SetPoint(i, 2+2*i, y_data[i])
-    f.SetPoint(i, 2+2*i, x_data[i])
+    g.SetPoint(i, 5+5*i, y_data[i])
+    f.SetPoint(i, 5+5*i, x_data[i])
 
 c = TCanvas("c", "", 600, 500)
-g.SetTitle("Gaus fit STD and Efficiency wrt cut value; Cut Value (npe); STD (npe-weighted) (Blue) / Efficiency (Red)")
+g.SetTitle("Gaus fit STD and Efficiency wrt cut value; Cut Value (npe); STD (Blue) / Efficiency (Red)")
 g.SetMinimum(50)
 g.SetMaximum(110)
 g.SetMarkerSize(1)
@@ -39,7 +39,9 @@ f.SetMarkerColor(ROOT.kBlue)
 f.Draw("P")
 
 c.Update()
-c.SaveAs("STD and Efficiency.png")
+c.SaveAs("stdandefficiency.png")
+c.SaveAs("stdandeffeciency.C")
 # Wait till exit
 ctr += 1
+print "Hit <ENTER> to exit"
 sys.stdin.readline()
