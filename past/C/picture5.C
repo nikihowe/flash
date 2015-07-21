@@ -1,7 +1,7 @@
-void picture 5()
+void picture5()
 {
 //=========Macro generated from canvas: c/
-//=========  (Wed Jul 15 12:51:36 2015) by ROOT version6.04/00
+//=========  (Wed Jul 15 12:53:51 2015) by ROOT version6.04/00
    TCanvas *c = new TCanvas("c", "",0,45,600,500);
    c->SetHighLightColor(2);
    c->Range(-150,-150,1350,150);

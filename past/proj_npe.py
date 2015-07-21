@@ -43,9 +43,9 @@ while 1:
         g1.SetMarkerStyle(20)
         g1.SetMarkerSize(1)
         g1.SetMinimum(0)
-        g1.SetTitle("npe values of flashes in event: " + str(evt_ctr))
-        g1.GetXaxis().SetTitle("flash_t")
-        g1.GetYaxis().SetTitle("flash_npe")
+        g1.SetTitle("Event " + str(evt_ctr))
+        g1.GetXaxis().SetTitle("time wrt trigger [cm]")
+        g1.GetYaxis().SetTitle("#PE")
         g1.SetMarkerColor(ROOT.kBlue)
         ctr += 1
     g1.Draw("AP")

@@ -26,7 +26,7 @@ for i in xrange(len(x_data)):
     f.SetPoint(i, 5+5*i, x_data[i])
 
 c = TCanvas("c", "", 600, 500)
-g.SetTitle("Gaus fit STD and Efficiency wrt cut value; Cut Value (npe); STD (Blue) / Efficiency (Red)")
+g.SetTitle("Width of histogram and Efficiency wrt cut value; Cut Value [#PE]; STD (blue),  Efficiency (red)")
 g.SetMinimum(50)
 g.SetMaximum(110)
 g.SetMarkerSize(1)

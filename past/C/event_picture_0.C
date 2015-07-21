@@ -1,8 +1,8 @@
 void event_picture_0()
 {
 //=========Macro generated from canvas: c/
-//=========  (Wed Jul 15 10:03:01 2015) by ROOT version6.04/00
-   TCanvas *c = new TCanvas("c", "",0,45,600,500);
+//=========  (Wed Jul 15 12:45:22 2015) by ROOT version6.04/00
+   TCanvas *c = new TCanvas("c", "",277,106,600,502);
    c->SetHighLightColor(2);
    c->Range(-123.9199,-150,1115.279,150);
    c->SetFillColor(0);
@@ -79,38 +79,38 @@ void event_picture_0()
    27.547};
    TGraph *graph = new TGraph(32,Graph0_fx1,Graph0_fy1);
    graph->SetName("Graph0");
-   graph->SetTitle("Event number: 0");
+   graph->SetTitle("Event 0");
    graph->SetFillColor(1);
+   graph->SetMarkerColor(4);
+   graph->SetMarkerStyle(20);
+   
+   TH1F *Graph_Graph_Graph11 = new TH1F("Graph_Graph_Graph11","Event 0",100,0,991.3595);
+   Graph_Graph_Graph11->SetMinimum(-120);
+   Graph_Graph_Graph11->SetMaximum(120);
+   Graph_Graph_Graph11->SetDirectory(0);
+   Graph_Graph_Graph11->SetStats(0);
 
    Int_t ci;      // for color index setting
    TColor *color; // for color definition with alpha
-   ci = TColor::GetColor("#0000ff");
-   graph->SetMarkerColor(ci);
-   graph->SetMarkerStyle(20);
-   
-   TH1F *Graph_Graph1 = new TH1F("Graph_Graph1","Event number: 0",100,0,991.3595);
-   Graph_Graph1->SetMinimum(-120);
-   Graph_Graph1->SetMaximum(120);
-   Graph_Graph1->SetDirectory(0);
-   Graph_Graph1->SetStats(0);
-
    ci = TColor::GetColor("#000099");
-   Graph_Graph1->SetLineColor(ci);
-   Graph_Graph1->GetXaxis()->SetTitle("z flash data");
-   Graph_Graph1->GetXaxis()->SetLabelFont(42);
-   Graph_Graph1->GetXaxis()->SetLabelSize(0.035);
-   Graph_Graph1->GetXaxis()->SetTitleSize(0.035);
-   Graph_Graph1->GetXaxis()->SetTitleFont(42);
-   Graph_Graph1->GetYaxis()->SetTitle("y flash data");
-   Graph_Graph1->GetYaxis()->SetLabelFont(42);
-   Graph_Graph1->GetYaxis()->SetLabelSize(0.035);
-   Graph_Graph1->GetYaxis()->SetTitleSize(0.035);
-   Graph_Graph1->GetYaxis()->SetTitleFont(42);
-   Graph_Graph1->GetZaxis()->SetLabelFont(42);
-   Graph_Graph1->GetZaxis()->SetLabelSize(0.035);
-   Graph_Graph1->GetZaxis()->SetTitleSize(0.035);
-   Graph_Graph1->GetZaxis()->SetTitleFont(42);
-   graph->SetHistogram(Graph_Graph1);
+   Graph_Graph_Graph11->SetLineColor(ci);
+   Graph_Graph_Graph11->GetXaxis()->SetTitle("Z [cm]");
+   Graph_Graph_Graph11->GetXaxis()->SetLabelFont(22);
+   Graph_Graph_Graph11->GetXaxis()->SetLabelSize(0.05);
+   Graph_Graph_Graph11->GetXaxis()->SetTitleSize(0.05);
+   Graph_Graph_Graph11->GetXaxis()->SetTitleOffset(0.95);
+   Graph_Graph_Graph11->GetXaxis()->SetTitleFont(22);
+   Graph_Graph_Graph11->GetYaxis()->SetTitle("Y [cm]");
+   Graph_Graph_Graph11->GetYaxis()->SetLabelFont(22);
+   Graph_Graph_Graph11->GetYaxis()->SetLabelSize(0.05);
+   Graph_Graph_Graph11->GetYaxis()->SetTitleSize(0.05);
+   Graph_Graph_Graph11->GetYaxis()->SetTitleOffset(0.96);
+   Graph_Graph_Graph11->GetYaxis()->SetTitleFont(22);
+   Graph_Graph_Graph11->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph11->GetZaxis()->SetLabelSize(0.035);
+   Graph_Graph_Graph11->GetZaxis()->SetTitleSize(0.035);
+   Graph_Graph_Graph11->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph_Graph11);
    
    graph->Draw("ap");
    
@@ -122,32 +122,30 @@ void event_picture_0()
    graph->SetName("Graph1");
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
-
-   ci = TColor::GetColor("#00ff00");
-   graph->SetMarkerColor(ci);
+   graph->SetMarkerColor(3);
    graph->SetMarkerStyle(20);
    
-   TH1F *Graph_Graph2 = new TH1F("Graph_Graph2","Graph",100,904.7542,905.9542);
-   Graph_Graph2->SetMinimum(-120);
-   Graph_Graph2->SetMaximum(120);
-   Graph_Graph2->SetDirectory(0);
-   Graph_Graph2->SetStats(0);
+   TH1F *Graph_Graph_Graph22 = new TH1F("Graph_Graph_Graph22","Graph",100,904.7542,905.9542);
+   Graph_Graph_Graph22->SetMinimum(-120);
+   Graph_Graph_Graph22->SetMaximum(120);
+   Graph_Graph_Graph22->SetDirectory(0);
+   Graph_Graph_Graph22->SetStats(0);
 
    ci = TColor::GetColor("#000099");
-   Graph_Graph2->SetLineColor(ci);
-   Graph_Graph2->GetXaxis()->SetLabelFont(42);
-   Graph_Graph2->GetXaxis()->SetLabelSize(0.035);
-   Graph_Graph2->GetXaxis()->SetTitleSize(0.035);
-   Graph_Graph2->GetXaxis()->SetTitleFont(42);
-   Graph_Graph2->GetYaxis()->SetLabelFont(42);
-   Graph_Graph2->GetYaxis()->SetLabelSize(0.035);
-   Graph_Graph2->GetYaxis()->SetTitleSize(0.035);
-   Graph_Graph2->GetYaxis()->SetTitleFont(42);
-   Graph_Graph2->GetZaxis()->SetLabelFont(42);
-   Graph_Graph2->GetZaxis()->SetLabelSize(0.035);
-   Graph_Graph2->GetZaxis()->SetTitleSize(0.035);
-   Graph_Graph2->GetZaxis()->SetTitleFont(42);
-   graph->SetHistogram(Graph_Graph2);
+   Graph_Graph_Graph22->SetLineColor(ci);
+   Graph_Graph_Graph22->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_Graph22->GetXaxis()->SetLabelSize(0.035);
+   Graph_Graph_Graph22->GetXaxis()->SetTitleSize(0.035);
+   Graph_Graph_Graph22->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_Graph22->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_Graph22->GetYaxis()->SetLabelSize(0.035);
+   Graph_Graph_Graph22->GetYaxis()->SetTitleSize(0.035);
+   Graph_Graph_Graph22->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_Graph22->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph22->GetZaxis()->SetLabelSize(0.035);
+   Graph_Graph_Graph22->GetZaxis()->SetTitleSize(0.035);
+   Graph_Graph_Graph22->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph_Graph22);
    
    graph->Draw("p");
    
@@ -159,42 +157,41 @@ void event_picture_0()
    graph->SetName("Graph2");
    graph->SetTitle("Graph");
    graph->SetFillColor(1);
-
-   ci = TColor::GetColor("#ff0000");
-   graph->SetMarkerColor(ci);
+   graph->SetMarkerColor(2);
    graph->SetMarkerStyle(20);
    
-   TH1F *Graph_Graph3 = new TH1F("Graph_Graph3","Graph",100,933.3657,934.5657);
-   Graph_Graph3->SetMinimum(-120);
-   Graph_Graph3->SetMaximum(120);
-   Graph_Graph3->SetDirectory(0);
-   Graph_Graph3->SetStats(0);
+   TH1F *Graph_Graph_Graph33 = new TH1F("Graph_Graph_Graph33","Graph",100,933.3657,934.5657);
+   Graph_Graph_Graph33->SetMinimum(-120);
+   Graph_Graph_Graph33->SetMaximum(120);
+   Graph_Graph_Graph33->SetDirectory(0);
+   Graph_Graph_Graph33->SetStats(0);
 
    ci = TColor::GetColor("#000099");
-   Graph_Graph3->SetLineColor(ci);
-   Graph_Graph3->GetXaxis()->SetLabelFont(42);
-   Graph_Graph3->GetXaxis()->SetLabelSize(0.035);
-   Graph_Graph3->GetXaxis()->SetTitleSize(0.035);
-   Graph_Graph3->GetXaxis()->SetTitleFont(42);
-   Graph_Graph3->GetYaxis()->SetLabelFont(42);
-   Graph_Graph3->GetYaxis()->SetLabelSize(0.035);
-   Graph_Graph3->GetYaxis()->SetTitleSize(0.035);
-   Graph_Graph3->GetYaxis()->SetTitleFont(42);
-   Graph_Graph3->GetZaxis()->SetLabelFont(42);
-   Graph_Graph3->GetZaxis()->SetLabelSize(0.035);
-   Graph_Graph3->GetZaxis()->SetTitleSize(0.035);
-   Graph_Graph3->GetZaxis()->SetTitleFont(42);
-   graph->SetHistogram(Graph_Graph3);
+   Graph_Graph_Graph33->SetLineColor(ci);
+   Graph_Graph_Graph33->GetXaxis()->SetLabelFont(42);
+   Graph_Graph_Graph33->GetXaxis()->SetLabelSize(0.035);
+   Graph_Graph_Graph33->GetXaxis()->SetTitleSize(0.035);
+   Graph_Graph_Graph33->GetXaxis()->SetTitleFont(42);
+   Graph_Graph_Graph33->GetYaxis()->SetLabelFont(42);
+   Graph_Graph_Graph33->GetYaxis()->SetLabelSize(0.035);
+   Graph_Graph_Graph33->GetYaxis()->SetTitleSize(0.035);
+   Graph_Graph_Graph33->GetYaxis()->SetTitleFont(42);
+   Graph_Graph_Graph33->GetZaxis()->SetLabelFont(42);
+   Graph_Graph_Graph33->GetZaxis()->SetLabelSize(0.035);
+   Graph_Graph_Graph33->GetZaxis()->SetTitleSize(0.035);
+   Graph_Graph_Graph33->GetZaxis()->SetTitleFont(42);
+   graph->SetHistogram(Graph_Graph_Graph33);
    
    graph->Draw("p");
    
-   TPaveText *pt = new TPaveText(0.3328094,0.94,0.6671906,0.995,"blNDC");
+   TPaveText *pt = new TPaveText(0.4189298,0.94,0.5810702,0.995,"blNDC");
    pt->SetName("title");
    pt->SetBorderSize(0);
    pt->SetFillColor(0);
    pt->SetFillStyle(0);
-   pt->SetTextFont(42);
-   TText *AText = pt->AddText("Event number: 0");
+   pt->SetTextFont(22);
+   pt->SetTextSize(0.06315789);
+   TText *AText = pt->AddText("Event 0");
    pt->Draw();
    c->Modified();
    c->cd();

@@ -53,9 +53,9 @@ while 1:
     g1.SetMarkerSize(1)
     g1.SetMinimum(-120)
     g1.SetMaximum(120)
-    g1.SetTitle("Event number: " + str(evt_ctr))
-    g1.GetXaxis().SetTitle("z flash data")
-    g1.GetYaxis().SetTitle("y flash data")
+    g1.SetTitle("Event " + str(evt_ctr))
+    g1.GetXaxis().SetTitle("Z [cm]")
+    g1.GetYaxis().SetTitle("Y [cm]")
     g1.SetMarkerColor(ROOT.kBlue)       
     g1.Draw("AP")
 

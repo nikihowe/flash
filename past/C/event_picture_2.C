@@ -1,7 +1,7 @@
 void event_picture_2()
 {
 //=========Macro generated from canvas: c/
-//=========  (Wed Jul 15 10:03:04 2015) by ROOT version6.04/00
+//=========  (Wed Jul 15 12:43:35 2015) by ROOT version6.04/00
    TCanvas *c = new TCanvas("c", "",0,45,600,500);
    c->SetHighLightColor(2);
    c->Range(-132.6545,-150,1193.891,150);
@@ -99,7 +99,7 @@ void event_picture_2()
    55.26902};
    TGraph *graph = new TGraph(42,Graph0_fx7,Graph0_fy7);
    graph->SetName("Graph0");
-   graph->SetTitle("Event number: 2");
+   graph->SetTitle("Event 2");
    graph->SetFillColor(1);
 
    Int_t ci;      // for color index setting
@@ -108,7 +108,7 @@ void event_picture_2()
    graph->SetMarkerColor(ci);
    graph->SetMarkerStyle(20);
    
-   TH1F *Graph_Graph7 = new TH1F("Graph_Graph7","Event number: 2",100,0,1061.236);
+   TH1F *Graph_Graph7 = new TH1F("Graph_Graph7","Event 2",100,0,1061.236);
    Graph_Graph7->SetMinimum(-120);
    Graph_Graph7->SetMaximum(120);
    Graph_Graph7->SetDirectory(0);
@@ -116,12 +116,12 @@ void event_picture_2()
 
    ci = TColor::GetColor("#000099");
    Graph_Graph7->SetLineColor(ci);
-   Graph_Graph7->GetXaxis()->SetTitle("z flash data");
+   Graph_Graph7->GetXaxis()->SetTitle("Z [cm]");
    Graph_Graph7->GetXaxis()->SetLabelFont(42);
    Graph_Graph7->GetXaxis()->SetLabelSize(0.035);
    Graph_Graph7->GetXaxis()->SetTitleSize(0.035);
    Graph_Graph7->GetXaxis()->SetTitleFont(42);
-   Graph_Graph7->GetYaxis()->SetTitle("y flash data");
+   Graph_Graph7->GetYaxis()->SetTitle("Y [cm]");
    Graph_Graph7->GetYaxis()->SetLabelFont(42);
    Graph_Graph7->GetYaxis()->SetLabelSize(0.035);
    Graph_Graph7->GetYaxis()->SetTitleSize(0.035);
@@ -208,13 +208,13 @@ void event_picture_2()
    
    graph->Draw("p");
    
-   TPaveText *pt = new TPaveText(0.3328094,0.94,0.6671906,0.995,"blNDC");
+   TPaveText *pt = new TPaveText(0.4189298,0.94,0.5810702,0.995,"blNDC");
    pt->SetName("title");
    pt->SetBorderSize(0);
    pt->SetFillColor(0);
    pt->SetFillStyle(0);
    pt->SetTextFont(42);
-   TText *AText = pt->AddText("Event number: 2");
+   TText *AText = pt->AddText("Event 2");
    pt->Draw();
    c->Modified();
    c->cd();

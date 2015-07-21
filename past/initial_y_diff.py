@@ -6,8 +6,8 @@ c = ROOT.TCanvas("c","", 600,500)
 ch = ROOT.TChain("flash_tree")
 ch.AddFile("niki_tree.root")
 
-hist = ROOT.TH1D("hist", "Difference in PMT-constructed position and mc-truth start position", 100, -120, 120)
-hist.GetXaxis().SetTitle("flash_y - mc_start_y")
+hist = ROOT.TH1D("hist", "Difference in PMT-constructed position and mc-truth start position", 100, -130, 130)
+hist.GetXaxis().SetTitle("#DeltaY [cm]")
 
 ctr = 0
 

@@ -1,7 +1,7 @@
 void stdandeffeciency()
 {
 //=========Macro generated from canvas: c/
-//=========  (Wed Jul 15 10:25:28 2015) by ROOT version6.04/00
+//=========  (Wed Jul 15 16:45:00 2015) by ROOT version6.04/00
    TCanvas *c = new TCanvas("c", "",0,45,600,500);
    c->SetHighLightColor(2);
    c->Range(-13.6875,42.5,123.1875,117.5);
@@ -55,7 +55,7 @@ void stdandeffeciency()
    76.37764};
    TGraph *graph = new TGraph(20,_fx1,_fy1);
    graph->SetName("");
-   graph->SetTitle("Gaus fit STD and Efficiency wrt cut value; Cut Value (npe); STD (Blue) / Efficiency (Red)");
+   graph->SetTitle("Width of histogram and Efficiency wrt cut value; Cut Value [#PE]; STD (blue),  Efficiency (red)");
    graph->SetFillColor(1);
 
    Int_t ci;      // for color index setting
@@ -64,7 +64,7 @@ void stdandeffeciency()
    graph->SetMarkerColor(ci);
    graph->SetMarkerStyle(20);
    
-   TH1F *Graph_Graph1 = new TH1F("Graph_Graph1","Gaus fit STD and Efficiency wrt cut value",100,0,109.5);
+   TH1F *Graph_Graph1 = new TH1F("Graph_Graph1","Width of histogram and Efficiency wrt cut value",100,0,109.5);
    Graph_Graph1->SetMinimum(50);
    Graph_Graph1->SetMaximum(110);
    Graph_Graph1->SetDirectory(0);
@@ -72,12 +72,12 @@ void stdandeffeciency()
 
    ci = TColor::GetColor("#000099");
    Graph_Graph1->SetLineColor(ci);
-   Graph_Graph1->GetXaxis()->SetTitle(" Cut Value (npe)");
+   Graph_Graph1->GetXaxis()->SetTitle(" Cut Value [#PE]");
    Graph_Graph1->GetXaxis()->SetLabelFont(42);
    Graph_Graph1->GetXaxis()->SetLabelSize(0.035);
    Graph_Graph1->GetXaxis()->SetTitleSize(0.035);
    Graph_Graph1->GetXaxis()->SetTitleFont(42);
-   Graph_Graph1->GetYaxis()->SetTitle(" STD (Blue) / Efficiency (Red)");
+   Graph_Graph1->GetYaxis()->SetTitle(" STD (blue),  Efficiency (red)");
    Graph_Graph1->GetYaxis()->SetLabelFont(42);
    Graph_Graph1->GetYaxis()->SetLabelSize(0.035);
    Graph_Graph1->GetYaxis()->SetTitleSize(0.035);
@@ -171,7 +171,7 @@ void stdandeffeciency()
    pt->SetFillColor(0);
    pt->SetFillStyle(0);
    pt->SetTextFont(42);
-   TText *AText = pt->AddText("Gaus fit STD and Efficiency wrt cut value");
+   TText *AText = pt->AddText("Width of histogram and Efficiency wrt cut value");
    pt->Draw();
    c->Modified();
    c->cd();

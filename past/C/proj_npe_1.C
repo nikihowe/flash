@@ -1,7 +1,7 @@
 void proj_npe_1()
 {
 //=========Macro generated from canvas: c/
-//=========  (Wed Jul 15 10:08:14 2015) by ROOT version6.04/00
+//=========  (Wed Jul 15 16:16:05 2015) by ROOT version6.04/00
    TCanvas *c = new TCanvas("c", "",0,45,600,500);
    c->SetHighLightColor(2);
    c->Range(-2655.754,-5.755,4350.289,51.795);
@@ -93,7 +93,7 @@ void proj_npe_1()
    2.3};
    TGraph *graph = new TGraph(39,_fx2,_fy2);
    graph->SetName("");
-   graph->SetTitle("npe values of flashes in event: 1");
+   graph->SetTitle("Event 1");
    graph->SetFillColor(1);
 
    Int_t ci;      // for color index setting
@@ -102,7 +102,7 @@ void proj_npe_1()
    graph->SetMarkerColor(ci);
    graph->SetMarkerStyle(20);
    
-   TH1F *Graph_Graph2 = new TH1F("Graph_Graph2","npe values of flashes in event: 1",100,-1955.149,3649.684);
+   TH1F *Graph_Graph2 = new TH1F("Graph_Graph2","Event 1",100,-1955.149,3649.684);
    Graph_Graph2->SetMinimum(0);
    Graph_Graph2->SetMaximum(46.04);
    Graph_Graph2->SetDirectory(0);
@@ -110,12 +110,12 @@ void proj_npe_1()
 
    ci = TColor::GetColor("#000099");
    Graph_Graph2->SetLineColor(ci);
-   Graph_Graph2->GetXaxis()->SetTitle("flash_t");
+   Graph_Graph2->GetXaxis()->SetTitle("time wrt trigger [cm]");
    Graph_Graph2->GetXaxis()->SetLabelFont(42);
    Graph_Graph2->GetXaxis()->SetLabelSize(0.035);
    Graph_Graph2->GetXaxis()->SetTitleSize(0.035);
    Graph_Graph2->GetXaxis()->SetTitleFont(42);
-   Graph_Graph2->GetYaxis()->SetTitle("flash_npe");
+   Graph_Graph2->GetYaxis()->SetTitle("#PE");
    Graph_Graph2->GetYaxis()->SetLabelFont(42);
    Graph_Graph2->GetYaxis()->SetLabelSize(0.035);
    Graph_Graph2->GetYaxis()->SetTitleSize(0.035);
@@ -128,13 +128,13 @@ void proj_npe_1()
    
    graph->Draw("ap");
    
-   TPaveText *pt = new TPaveText(0.1823077,0.9368947,0.8176923,0.995,"blNDC");
+   TPaveText *pt = new TPaveText(0.4189298,0.94,0.5810702,0.995,"blNDC");
    pt->SetName("title");
    pt->SetBorderSize(0);
    pt->SetFillColor(0);
    pt->SetFillStyle(0);
    pt->SetTextFont(42);
-   TText *AText = pt->AddText("npe values of flashes in event: 1");
+   TText *AText = pt->AddText("Event 1");
    pt->Draw();
    c->Modified();
    c->cd();

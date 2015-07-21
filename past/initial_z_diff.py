@@ -7,7 +7,7 @@ ch = ROOT.TChain("flash_tree")
 ch.AddFile("niki_tree.root")
 
 hist = ROOT.TH1D("hist", "Difference in PMT-constructed position and mc-truth start position", 100, -1200, 1200)
-hist.GetXaxis().SetTitle("flash_z - mc_start_z")
+hist.GetXaxis().SetTitle("#DeltaZ [cm]")
 
 ctr = 0
 
