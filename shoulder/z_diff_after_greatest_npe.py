@@ -4,8 +4,8 @@ import ROOT
 
 c = ROOT.TCanvas("c","", 600, 500)
 d = ROOT.TCanvas("d", "", 600, 500)
-ch = ROOT.TChain("flash_tree")
-ch.AddFile("niki_tree.root")
+ch = ROOT.TChain("match_tree")
+ch.AddFile("ana_ophit.root")
 
 # Given a set of flashes, determines whether they will
 # make a given energy cut
@@ -21,7 +21,7 @@ def makesCut(start_ctr, end_ctr, cut):
     else:
         return False
 
-# Given a starting point and ending point, order flahes in npe.
+# Given a starting point and ending point, order flashes in npe.
 # Returns a list of the npes sorted in reverse order
 def orderInNpe(start_ctr, end_ctr):
     ordered_npes = []
@@ -53,7 +53,7 @@ ctr = 0
 for window_size in {1}:
 
     # Set the cut value here
-    cut_value = 6
+    cut_value = 5
 
     # Set preliminary values to avoid getting messed up in the future
     endpoint = 0
@@ -100,10 +100,10 @@ for window_size in {1}:
 hist.Draw()
 c.Update()
 c.SaveAs("z_diff_after_greatest_npe.png")
-#d.cd()
-#d.SetLogx(1)
-#kist.Draw()
-#d.Update()
-#d.SaveAs("z_diff_after_greatest_npe_npe_value.png")
+d.cd()
+d.SetLogx(1)
+kist.Draw()
+d.Update()
+d.SaveAs("z_diff_after_greatest_npe_npe_value.png")
 print "Hit <ENTER> to exit"
 sys.stdin.readline()

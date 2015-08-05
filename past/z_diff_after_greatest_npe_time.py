@@ -3,7 +3,7 @@ import math
 import ROOT
 
 c = ROOT.TCanvas("c","", 600, 500)
-d = ROOT.TCanvas("d", "", 600, 500)
+#d = ROOT.TCanvas("d", "", 600, 500)
 ch = ROOT.TChain("flash_tree")
 ch.AddFile("niki_tree.root")
 
@@ -53,14 +53,14 @@ ctr = 0
 for window_size in {1}:
 
     # Set the cut value here
-    cut_value = 6
+    cut_value = 5
 
     # Set preliminary values to avoid getting messed up in the future
     endpoint = 0
     points_dict = {}
 
-    hist = ROOT.TH1D("hist", "Cut at: " + str(cut_value), 100, -300, 300)
-    hist.GetXaxis().SetTitle("distance")
+    hist = ROOT.TH1D("hist", "Timing of Lesser-Energy Cut-Makers", 100, -50, 50)
+    hist.GetXaxis().SetTitle("time wrt trigger")
     kist = ROOT.TH1D('hist', "Npe value", 100, 0, 500)
     kist.GetXaxis().SetTitle("npe")
     ctr = 0
@@ -80,7 +80,6 @@ for window_size in {1}:
             max_npe = 0.
             veto_zone = []
             ch.GetEntry(ctr)
-#            print "Ordered Npes: " + str(ordered_npes)
             vetoed = True
             for i in ordered_npes:
                     if not i > cut_value:
@@ -88,7 +87,7 @@ for window_size in {1}:
                     if vetoed:
                         vetoed = False
                     elif not vetoed:
-                        hist.Fill(ch.mc_start_z - points_dict[i][0])
+                        hist.Fill(points_dict[i][1])
                         kist.Fill(i)
                         print "Filled for npe = " + str(i) + " at time " + str(points_dict[i][1])
                         
@@ -99,7 +98,7 @@ for window_size in {1}:
             break
 hist.Draw()
 c.Update()
-c.SaveAs("z_diff_after_greatest_npe.png")
+c.SaveAs("z_diff_after_greatest_npe_time.png")
 #d.cd()
 #d.SetLogx(1)
 #kist.Draw()
